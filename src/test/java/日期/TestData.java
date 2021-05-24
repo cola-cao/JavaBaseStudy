@@ -10,6 +10,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import javax.xml.crypto.Data;
 
@@ -24,6 +25,7 @@ public class TestData {
     //1.System.currentTimeMillis()
     //2.java.util.Date   java.sql.Date
     //3.java.text.SimpleDateFormat
+    //4.Calendar
     @Test
     public void test(){
         System.out.println(System.currentTimeMillis());
@@ -36,7 +38,7 @@ public class TestData {
         Date data = new Date();
 
         System.out.println(data.toString());
-        System.out.println(data.getTime());
+        System.out.println(data.getTime()); //毫秒
 
         long l = System.currentTimeMillis();
 
@@ -60,6 +62,14 @@ public class TestData {
         System.out.println(format.parse(sql));
 
         System.out.println(3<<5);
+
+        //4.Calendar
+        //不能new，可以获取实例化
+        Calendar instance = Calendar.getInstance();
+
+        //使用方法
+        System.out.println(instance.get(Calendar.DAY_OF_MONTH)); //这个月的第几天
+        System.out.println(instance.get(Calendar.DAY_OF_WEEK));
 
     }
 
