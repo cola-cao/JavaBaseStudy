@@ -19,6 +19,11 @@ public class 集合 {
         list.add("4343");
         list.add("76787");
 
+        List list1 = new ArrayList<>();
+        list1.add(list);
+        list.add("xiaohong");
+        System.out.println(list1);
+
 
         Collections.synchronizedList(list);
 
