@@ -12,8 +12,6 @@ public class 集合 {
 
     public static void main(String[] args) {
         List list = new ArrayList<>();
-
-        list.add("小明");
         list.add("xiaoming");
         list.add("fdsfds");
         list.add("4343");
