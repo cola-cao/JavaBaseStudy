@@ -31,7 +31,7 @@ public class FileReaderWriterTest {
 
     @Test
     void testFileReader() {
-        File file = new File("F:\\剑指offer\\src\\test\\java\\IO\\Hello.txt");
+        File file = new File("/home/santi/Downloads/api文档/cola/剑指offer/src/test/java/IO/Hello.txt");
         System.out.println(file.getAbsoluteFile());
         FileReader fileReader = null;
         try {
@@ -40,8 +40,7 @@ public class FileReaderWriterTest {
             //3.数据的读入
             int data;
             while ((data = fileReader.read()) != -1) {
-                System.out.println((char) data + "");
-                data = fileReader.read();
+                System.out.print((char) data + "");
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -63,13 +62,13 @@ public class FileReaderWriterTest {
     @Test
     void testFileReader2() throws IOException {
         //实例化文件
-        File file = new File("F:\\剑指offer\\src\\test\\java\\IO\\FileReaderWriterTest.java");
+        File file = new File("/home/santi/Downloads/api文档/cola/剑指offer/src/test/java/IO/FileReaderWriterTest.java");
         int hasData = 0;
         //2.提供流
         FileReader fileReader = null;
         try {
             fileReader = new FileReader(file);
-            char[] c1 = new char[2048];
+            char[] c1 = new char[512];
 
             while ((hasData = fileReader.read(c1)) > 0) {
                 // System.out.println("hasData="+hasData);
@@ -124,12 +123,6 @@ public class FileReaderWriterTest {
 
     @Test
     void fileInPut() {
-
-
-        int a = 0;
-        a = a++;
-
-        System.out.println(a);
 
         FileInputStream fs = null;
         FileOutputStream fw = null;
@@ -224,6 +217,7 @@ public class FileReaderWriterTest {
 
         fis.close();
         fos.close();
+
 
 
     }

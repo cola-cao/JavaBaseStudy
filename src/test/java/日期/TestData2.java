@@ -1,12 +1,16 @@
 package 日期;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created on 2021/5/20.
- *
  * @author 曹可乐
  */
 public class TestData2 {
@@ -17,6 +21,7 @@ public class TestData2 {
         LocalDate now = LocalDate.now(); System.out.println(now);
         LocalTime now1 = LocalTime.now();System.out.println(now1);
         LocalDateTime now2 = LocalDateTime.now();System.out.println(now2);
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
 
         //of():设置指定的年月日时分秒。没有偏移量
@@ -38,6 +43,10 @@ public class TestData2 {
 
         //plus 加时间
         System.out.println(now2.plusDays(5));
+
+        //格式化
+        String format = dateTimeFormatter.format(now2.plusDays(-1));
+        System.out.println(format);
 
     }
 }
